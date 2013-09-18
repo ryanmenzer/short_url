@@ -9,8 +9,12 @@ get '/:short_url' do
   # redirect to appropriate long url
 end
 
+get '/urls/list' do
+  erb :urls
+end
+
 ########## POSTS ##################
 
 post '/urls' do
-  # create new short url
+  @url = 
 end

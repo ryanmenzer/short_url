@@ -1,6 +1,11 @@
 <h1> URL LIST </h1>
 
 <form action="/urls" method="POST"> 
-  
-
+  <div>
+    <label for="long_url">Long URL: </label>
+    <input id="long_url" type="text" name="url[long_url]" value="<%= @url.try(:long_url) %>">
+  </div>
+  <div>
+    <input type="submit">  
+  </div>
 </form>
