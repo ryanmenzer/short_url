@@ -5,8 +5,9 @@ get '/' do
   erb :index
 end
 
-get '/urls/:short_url' do
-  
+get '/:short_url' do
+  @url = Url.find_by_short_url(params[:short_url])
+  redirect to (@url.long_url)
 end
 
 get '/urls/list' do

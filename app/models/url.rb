@@ -12,4 +12,7 @@ class Url < ActiveRecord::Base
     8.times { temp_url << rand(97..122).chr}
     self.short_url = temp_url.sample(8).join
   end
+
+  
+  
 end
