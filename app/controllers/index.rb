@@ -5,16 +5,22 @@ get '/' do
   erb :index
 end
 
-get '/:short_url' do
-  # redirect to appropriate long url
+get '/urls/:short_url' do
+  
 end
 
 get '/urls/list' do
+  @urls = Url.all
   erb :urls
 end
 
 ########## POSTS ##################
 
 post '/urls' do
-  @url = 
+  @url = Url.new(params[:url])
+  if @url.save
+    redirect to('/')
+  else
+    erb :urls
+  end
 end

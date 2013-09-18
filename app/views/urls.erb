@@ -1,5 +1,21 @@
 <h1> URL LIST </h1>
 
+<% if @url && @url.errors.any? %>
+  <div>
+    <% @url.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<div>
+  <% @urls.each do |url| %>
+  <p>URL ID: <%= url.id %>
+  <a href="<%= url.short_url %>"> <%= url.short_url %></a>
+  <a href="<%= url.long_url %>"> <%= url.long_url %></a>
+  <% end %>
+</div>
+
 <form action="/urls" method="POST"> 
   <div>
     <label for="long_url">Long URL: </label>
@@ -9,3 +25,4 @@
     <input type="submit">  
   </div>
 </form>
+
